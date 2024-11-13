@@ -1,0 +1,102 @@
+IN THE CIE FOLDER
+1
+Package CIE;
+
+public class Personal {
+    public String usn;
+    public String name;
+    public int sem;
+
+    public Personal(String usn, String name, int sem) {
+        this.usn = usn;
+        this.name = name;
+        this.sem = sem;
+    }
+
+    public void displayPersonalInfo() {
+        System.out.println("USN: " + usn);
+        System.out.println("Name: " + name);
+        System.out.println("Semester: " + sem);
+    }
+}
+
+2
+package CIE;
+
+public class Internals {
+    public int[] internalMarks = new int[5];
+
+    public Internals(int[] marks) {
+        if (marks.length == 5) {
+            System.arraycopy(marks, 0, internalMarks, 0, 5);
+        } else {
+            System.out.println("Error: Exactly 5 marks are required.");
+        }
+    }
+
+    public void displayInternalMarks() {
+        System.out.print("Internal Marks: ");
+        for (int mark : internalMarks) {
+            System.out.print(mark + " ");
+        }
+        System.out.println();
+    }
+}
+
+IN THE SEE FOLDER
+
+package SEE;
+
+import CIE.Personal;
+
+public class External extends Personal {
+    public int[] externalMarks = new int[5];
+
+    public External(String usn, String name, int sem, int[] marks) {
+        super(usn, name, sem);
+        if (marks.length == 5) {
+            System.arraycopy(marks, 0, externalMarks, 0, 5);
+        } else {
+            System.out.println("Error: Exactly 5 marks are required.");
+        }
+    }
+
+    public void displayExternalMarks() {
+        System.out.print("External Marks: ");
+        for (int mark : externalMarks) {
+            System.out.print(mark + " ");
+        }
+        System.out.println();
+    }
+}
+
+
+IN THE MAIN CLASS
+
+package SEE;
+
+import CIE.Personal;
+
+public class External extends Personal {
+    public int[] externalMarks = new int[5];
+
+    public External(String usn, String name, int sem, int[] marks) {
+        super(usn, name, sem);
+        if (marks.length == 5) {
+            System.arraycopy(marks, 0, externalMarks, 0, 5);
+        } else {
+            System.out.println("Error: Exactly 5 marks are required.");
+        }
+    }
+
+    public void displayExternalMarks() {
+        System.out.print("External Marks: ");
+        for (int mark : externalMarks) {
+            System.out.print(mark + " ");
+        }
+        System.out.println();
+    }
+}
+
+
+
